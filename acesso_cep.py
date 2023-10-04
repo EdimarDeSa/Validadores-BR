@@ -10,8 +10,9 @@ class BuscaEndereco:
             raise ValueError("CEP inválido.")
         self._dados = self._pesquisa_cep()
 
-    def _sanitiza_cep(self, cep: str) -> str:
-        return str(re.sub(r'\D', '', str(cep)))
+    @staticmethod
+    def _sanitiza_cep(cep: str) -> str:
+        return ''.join(filter(str.isdigit, cep))
 
     def _valida_cep(self) -> bool:
         return len(self._cep) == 8
@@ -44,6 +45,7 @@ class BuscaEndereco:
     def uf(self) -> str:
         return self._dados['uf']
 
+    @property
     def __dict__(self) -> dict:
         return self._dados
 
@@ -52,3 +54,8 @@ class BuscaEndereco:
 
     def __repr__(self) -> repr:
         return repr(self._dados)
+
+
+if __name__ == '__main__':
+    busca = BuscaEndereco('88.132-600')
+    print(busca.__dict__)
