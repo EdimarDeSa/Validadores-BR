@@ -19,8 +19,23 @@ Uma coleção de validadores em Python para dados comuns no Brasil. Esses valida
 
 ## 🚀 Como Utilizar
 1. Clone o repositório:
+```bash
+git clone https://github.com/EdimarDeSa/Validadores-BR.git
+```
 2. Importe os módulos desejados em seu projeto Python:​
+```python
+from cpf_cnpj import validar_cpf, validar_cnpj
+from telefone_celular import validar_telefone
+from data_hora_br import validar_data, validar_hora
+from busca_cep import buscar_endereco_por_cep
+```
 3. Utilize as funções conforme necessário:
+```python
+if validar_cpf("123.456.789-09"):
+    print("CPF válido")
+else:
+    print("CPF inválido")
+```
 
 ## 📄 Licença
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](https://github.com/EdimarDeSa/Validadores-BR/blob/main/LICENSE) para mais informações.​
